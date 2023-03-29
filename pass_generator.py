@@ -20,10 +20,10 @@ def main():
         try:
             length = int(input('Ingrese longitud de caracteres: '))
             if length < 8 or length > max_length:
-                raise ValueError
+                raise ValueError(f"La longitud de la contraseña debe estar entre 8 y {max_length}.")
             break
-        except ValueError:
-            print(f"La longitud de la contraseña debe estar entre 8 y {max_length}.")
+        except ValueError as error:
+            print(f"{error}")
     while True:
         allow_repeats = input('¿Desea que su contraseña permita caracteres repetidos? (S/N): ').lower()
         if allow_repeats in {'s', 'n'}:
